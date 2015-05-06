@@ -14,7 +14,7 @@ prompt_setup_mozokai(){
   base_prompt_nocolor=$(echo "$base_prompt" | perl -pe "s/%\{[^}]+\}//g")
   post_prompt_nocolor=$(echo "$post_prompt" | perl -pe "s/%\{[^}]+\}//g")
 
-  add-zsh-hook precmd prompt_mozokai_precmd
+  precmd_functions+=(prompt_mozokai_precmd)
 }
 
 prompt_mozokai_precmd(){
